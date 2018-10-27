@@ -12,6 +12,8 @@
     - dependency
 
 - include: nginx.yml
+  tags:
+    - nginx
 
 - include: picoCTF-webapp.yml
   tags:
