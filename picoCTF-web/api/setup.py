@@ -31,6 +31,8 @@ def index_mongo():
 
     db.cache.ensure_index("expireAt", expireAfterSeconds=0)
     db.cache.ensure_index("kwargs", name="kwargs")
+    db.cache.ensure_index("kwargs.uid", name="kwargs.uid")
+    db.cache.ensure_index("kwargs.tid", name="kwargs.tid")
     db.cache.ensure_index("args", name="args")
 
     db.shell_servers.ensure_index(

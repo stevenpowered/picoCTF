@@ -105,6 +105,7 @@
   # build tools
     - build-essential
     - gdb
+    - nasm
     - perl
     - python
     - python3
