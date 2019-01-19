@@ -11,7 +11,7 @@ from os import chmod, listdir, sep, unlink
 from os.path import isdir, isfile, join
 from shutil import copy2, copytree
 
-from voluptuous import All, Length, MultipleInvalid, Range, Required, Schema
+from voluptuous import All, Length, MultipleInvalid, Range, Required, Schema, ALLOW_EXTRA
 
 logger = logging.getLogger(__name__)
 
@@ -90,7 +90,7 @@ problem_schema = Schema({
     "pkg_dependencies": list,
     "pip_requirements": list,
     "pip_python_version": All(str, Length(min=1, max=3))
-})
+}, extra=ALLOW_EXTRA)
 
 bundle_schema = Schema({
     Required("author"): All(str, Length(min=1, max=32)),
